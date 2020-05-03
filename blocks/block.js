@@ -13,7 +13,9 @@ class Block {
         try {
             const stringifyObj = JSON.stringify(self.body);
             self.hash = SHA256(stringifyObj);
-            return self.hash;
+            return {
+                hash: self.hash
+            };
         } catch(err) {
             console.log(err)
         }
